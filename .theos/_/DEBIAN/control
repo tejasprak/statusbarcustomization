@@ -1,0 +1,10 @@
+Package: me.tejasp.statusbarcustomization
+Name: statusbarcustomization
+Depends: mobilesubstrate
+Architecture: iphoneos-arm
+Description: An awesome MobileSubstrate tweak!
+Maintainer: Tejas Prakash
+Author: Tejas Prakash
+Section: Tweaks
+Version: 0.0.1-40+debug
+Installed-Size: 280

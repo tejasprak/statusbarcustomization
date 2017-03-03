@@ -18,12 +18,12 @@
 			<key>defaults</key>
 			<string>me.tejasp.statusbarcustomizationprefs</string>
 			<key>key</key>
-			<string>AwesomeSwitch1</string>
+			<string>statusBarColor</string>
 			<key>label</key>
-			<string>Awesome Switch 1</string>
+			<string>Change the status bar color</string>
 		</dict>
 	</array>
 	<key>title</key>
-	<string>statusbarcustomizationprefs</string>
+	<string>StatusBarCustomization</string>
 </dict>
 </plist>

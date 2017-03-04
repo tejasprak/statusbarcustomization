@@ -1,22 +1,11 @@
 #import <UIKit/UIKit.h>
 
-#define DARK_COLOR [UIColor colorWithRed:37.0f/255.0f green:37.0f/255.0f blue:37.0f/255.0f alpha:1.0f]
-
 @interface UIStatusBar : UIView
   -(void)setForegroundColor:(UIColor *)arg1;
   -(void)setTintColor:(id)arg1;
   -(void)setBackgroundColor:(UIColor *)arg1;
 @end
-@interface UIStatusBarForegroundStyleAttributes
-  @property (nonatomic,retain,readonly) UIColor * tintColor;
-@end
-@interface UIStatusBarDataNetworkItemView : UIView
-  @property (nonatomic, copy, readwrite) UIColor *backgroundColor;
-  @property (nonatomic, copy, readwrite) UIColor *foregroundColor;
-@end
-@interface UIStatusBarForegroundView
-  @property (nonatomic, copy, readwrite) UIColor *backgroundColor;
-@end
+
 %group TextInBarColor
 %hook UIStatusBar
 
@@ -55,6 +44,18 @@
   /*-(void)setBackgroundColor:(id)arg1 { %orig([UIColor blackColor]); }*/
 
 %end
+
+%end
+%ctor {
+  %init;
+  NSDictionary *prefs = [NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/me.tejasp.statusbarcustomizationprefs.plist"];
+  BOOL awesome = [prefs[@"statusBarColor"] boolValue];
+  if(awesome) {
+   %init(TextInBarColor);
+
+  }
+}
+
 /*
 %hook UIStatusBarForegroundStyleAttributes
 
@@ -77,7 +78,6 @@
     return ([UIColor greenColor]);
 }
 */
-%end
 /*
 %hook UIStatusBarNewUIStyleAttributes
 -(id)initWithRequest:(id)arg1 backgroundColor:(id)arg2 foregroundColor:(id)arg3 {
@@ -102,7 +102,8 @@
 
 %end
 %end
-
+*/
+/*
 %group moreBullshit
 %hook UIStatusBarDataNetworkItemView
 -(void)setUserInteractionEnabled:(BOOL)set
@@ -110,24 +111,23 @@
 	%orig(YES);
 }
 - (UIColor *) backgroundColor{
-      return ([UIColor greenColor]);
+      return ([UIColor redColor]);
+}
+-(void)setBackgroundColor:(id)arg1 {
+    %orig([UIColor redColor]);
+  }
+- (UIColor *) foregroundColor {
+    return ([UIColor redColor]);
 }
 %end
 %end
 */
-%ctor {
-  %init;
-  NSDictionary *prefs = [NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/me.tejasp.statusbarcustomizationprefs.plist"];
-  BOOL awesome = [prefs[@"statusBarColor"] boolValue];
-  if(awesome) {
-   %init(TextInBarColor);
-  }
-}
+
 /*
 %hook UINavigationBar
 
 - (id)backgroundColor {
-	return DARK_COLOR;
+	return([UIColor blackColor]);
 }
 
 %end

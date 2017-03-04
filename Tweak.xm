@@ -28,6 +28,9 @@
       NSString *color = [prefs objectForKey:@"whatColor"];
       %log(color);
       //get the color value using key "whatColor"
+      //if key is red, set red
+      //if key is blue, set blue
+      //if key is green, set green
       if([color isEqualToString:@"red"]) {
         [self setForegroundColor:[UIColor redColor]];
       } else if([color isEqualToString:@"blue"]) {
@@ -35,12 +38,16 @@
       } else if([color isEqualToString:@"green"]) {
         [self setForegroundColor:[UIColor greenColor]];
       }
-
-      //if key is red, set red
-      //if key is blue, set blue
-      //if key is green, set green
+      NSString *bgColor = [prefs objectForKey:@"backgroundColor"];
+      if([bgColor isEqualToString:@"red"]) {
+        [self setBackgroundColor:[UIColor redColor]];
+      } else if([bgColor isEqualToString:@"blue"]) {
+        [self setBackgroundColor:[UIColor blueColor]];
+      } else if([bgColor isEqualToString:@"green"]) {
+        [self setBackgroundColor:[UIColor greenColor]];
+      }
 	     //[self setForegroundColor:[UIColor redColor]];
-       [self setBackgroundColor:[UIColor blueColor]];
+       //[self setBackgroundColor:[UIColor blueColor]];
        //[self setTintColor:[UIColor greenColor]];
        //not working
        // [self setTintColor:[UIColor blueColor]];

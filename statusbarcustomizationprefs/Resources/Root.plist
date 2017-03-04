@@ -24,26 +24,6 @@
 		</dict>
 		<dict>
 			<key>cell</key>
-			<string>PSEditTextCell</string>
-			<key>default</key>
-			<string>Status bar text color</string>
-			<key>defaults</key>
-			<string>me.tejasp.statusbarcustomizationprefs</string>
-			<key>key</key>
-			<string>statusBarColorText</string>
-			<key>label</key>
-			<string>idk</string>
-		</dict>
-		<dict>
-			<key>cell</key>
-			<string>PSButtonCell</string>
-			<key>label</key>
-			<string>Respring</string>
-			<key>action</key>
-			<string>respring</string>
-		</dict>
-		<dict>
-			<key>cell</key>
 			<string>PSLinkListCell</string>
 			<key>defaults</key>
 			<string>me.tejasp.statusbarcustomizationprefs</string>
@@ -52,7 +32,7 @@
 			<key>key</key>
 			<string>whatColor</string>
 			<key>label</key>
-			<string>Status Bar Color</string>
+			<string>Status Bar Text Color</string>
 			<key>validTitles</key>
 			<array>
 				<string>Red</string>
@@ -67,10 +47,48 @@
 			</array>
 			<key>shortTitles</key>
 			<array>
+				<string>Red</string>
+				<string>Green</string>
+				<string>Blue</string>
+			</array>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSLinkListCell</string>
+			<key>defaults</key>
+			<string>me.tejasp.statusbarcustomizationprefs</string>
+			<key>detail</key>
+			<string>PSListItemsController</string>
+			<key>key</key>
+			<string>backgroundColor</string>
+			<key>label</key>
+			<string>Status Bar Background Color</string>
+			<key>validTitles</key>
+			<array>
+				<string>Red</string>
+				<string>Green</string>
+				<string>Blue</string>
+			</array>
+			<key>validValues</key>
+			<array>
 				<string>red</string>
 				<string>green</string>
 				<string>blue</string>
 			</array>
+			<key>shortTitles</key>
+			<array>
+				<string>Red</string>
+				<string>Green</string>
+				<string>Blue</string>
+			</array>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>Respring</string>
+			<key>action</key>
+			<string>respring</string>
 		</dict>
 	</array>
 	<key>title</key>
